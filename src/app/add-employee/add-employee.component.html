@@ -1,0 +1,97 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Employee</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="name" [(ngModel)]="employee.nomComplet" placeholder="Name" name="name" class="form-control" id="nomC">
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Num Nation:</label>
+            <input [(ngModel)]="employee.nni" placeholder="Numero Natuinal d'identification" name="nni" class="form-control" id="nni">
+        </div>
+
+        <div class="form-group">
+            <label for="poste">Poste </label>
+
+            <select class="form-control" id="poste" [(ngModel)]="employee.poste" name="poste">
+                 <option [ngValue]="poste" *ngFor="let poste of postes ">{{poste.titre}}</option>
+            </select>
+            <i class="fas fa-chevron-circle-down errspan" size="5x"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="dateEmbauche">date emboche</label>
+            <input [(ngModel)]="employee.dateEmbauche" placeholder="Date d\'Embauche" name="embauche" class="form-control" id="Dembauche" type=date>
+        </div>
+
+        <div class="form-group">
+            <label for="salaire">Salaire</label>
+            <input [(ngModel)]="employee.salaire" placeholder="Salaire" name="Salaire" class="form-control" id="salaire" type=number>
+        </div>
+
+        <div class="form-group">
+            <label for="dateNaissance">Date de Naissance </label>
+            <input [(ngModel)]="employee.dateNaissance" placeholder="Date de Naissance" name="dateNaissance" class="form-control" id="dateNaissance" type=date>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="tel">Telephone</label>
+            <input [(ngModel)]="employee.tel" placeholder="Telephone" name="tel" class="form-control" id="tel">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input [(ngModel)]="employee.email" placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="nationnalite">Nationnalite </label>
+
+            <select class="form-control" id="nationnalite" [(ngModel)]="employee.nationnalite" name="nationnalite">
+        <option [ngValue]="nationnalite" *ngFor="let nationnalite of pays" >{{nationnalite.nom}}</option>
+      </select>
+            <i class="fas fa-chevron-circle-down errspan" size="5x"></i>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="niveauEtude">NiveauEtude </label>
+
+            <select class="form-control" id="niveauEtude" [(ngModel)]="employee.niveauEtude" name="niveauEtude">
+      <option [ngValue]="niveauEtude" *ngFor="let niveauEtude of niveauEtudes ">{{niveauEtude.titre}}</option>
+    </select>
+            <i class="fas fa-chevron-circle-down errspan" size="5x"></i>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-group">
+            <label for="specialite">Specialite </label>
+
+            <select class="form-control" id="specialite" [(ngModel)]="employee.specialite" name="specialite">
+            <option  *ngFor="let specialite of specialites " [ngValue]="specialite">{{specialite.titre}}</option>
+          </select>
+            <i class="fas fa-chevron-circle-down errspan" size="5x"></i>
+        </div>
+
+
+
+
+
+
+        <button class="btn btn-success" (click)="createEmployee()">Create</button>
+    </form>
+</div>

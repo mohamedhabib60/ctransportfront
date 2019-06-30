@@ -1,0 +1,36 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Pret</h2>
+    {{pret.user.username}}
+    <form>
+
+        <div class="form-group">
+            <label for="Employee">Employee </label>
+
+            <select class="form-control" id="employee" [(ngModel)]="pret.employee" name="employee">
+               <option [ngValue]="employee" *ngFor="let employee of employees ">{{employee.nomComplet}}</option>
+          </select>
+            <i class="fas fa-chevron-circle-down errspan" size="5x"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="Somme">Somme</label>
+            <input [(ngModel)]="pret.somme" placeholder="some" name="somme" class="form-control" id="somme" type=number>
+        </div>
+
+
+        <div class="form-group">
+            <label for="datePret">Date de Pret </label>
+            <input [(ngModel)]="pret.datePret" placeholder="Date de Pret" name="datePret" class="form-control" id="datePret" type=date>
+        </div>
+
+
+
+
+
+
+
+        <button class="btn btn-success" (click)="createPret()">Create</button>
+    </form>
+</div>
+
+{{pret.user | json}}
